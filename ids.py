@@ -1,11 +1,11 @@
 
 def IDS(tree, root, goal, maxDepth):
     # init some variable to save some useful infomation
-    result = []
-    visted = {}
-    closed = {}
+    result = list()
+    visted = dict()
+    closed = dict()
     opens = list(root)
-    result = []
+    result = list()
     closed[root] = {"visted": True, "level": 0, "node": root}
     isDone = False
     while not isDone:
