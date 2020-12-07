@@ -2,16 +2,16 @@
 def IDS(tree, root, goal, maxDepth):
     # init some variable to save some useful infomation
     visted = dict()
-    closed = dict()
+    children = dict()
     opens = list(root)
-    result = list()
-    closed[root] = {"visted": True, "level": 0, "node": root}
+    closed = list()
+    children[root] = {"visted": True, "level": 0, "node": root}
     isDone = False
     while not isDone:
         if len(opens) <= 0:
             break
         node = opens[0]
-        result.append(node)
+        closed.append(node)
         if(visted.get(node, False) == True):
             break
         else:
@@ -20,7 +20,7 @@ def IDS(tree, root, goal, maxDepth):
             isDone = True
             break
         childNodes = tree.get(node)
-        currentDepth = closed[node]["level"]
+        currentDepth = children[node]["level"]
         opens.pop(0)
         if not childNodes:
             continue
@@ -29,12 +29,12 @@ def IDS(tree, root, goal, maxDepth):
         else:
             opens.extend(childNodes)
         for childNode in childNodes:
-            closed[childNode] = {
+            children[childNode] = {
                 "visted": True, "level": currentDepth+1, "node": childNode
             }
 
     print('\nIDS')
     if(isDone):
-        print(' => '.join(result))
+        print(' => '.join(closed))
     else:
         print(f'Not found {goal} in this tree')

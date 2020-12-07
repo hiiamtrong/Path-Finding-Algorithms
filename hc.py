@@ -2,7 +2,7 @@ def HC(Graph, start, goal):
     graph = Graph['graph']
     h = Graph['h']
     visted = dict()
-    result = []
+    closed = []
     opens = list(start)
     isDone = False
     while not isDone:
@@ -10,7 +10,7 @@ def HC(Graph, start, goal):
         if len(opens) <= 0:
             break
         node = opens[0]
-        result.append(node)
+        closed.append(node)
         if visted.get(node, False) == True:
             break
         else:
@@ -28,7 +28,7 @@ def HC(Graph, start, goal):
             opens[:0] = sorted_dict.keys()
     print('\nHC')
     if(isDone):
-        for node in result:
+        for node in closed:
             print(f"{node} ({h[node]})", end=' => ')
     else:
         print(f'Not found {goal} in this tree')
