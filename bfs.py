@@ -17,9 +17,9 @@ def BFS(tree, root, goal):
             isDone = True
             break
         opens.pop(0)
-        childNode = tree.get(node)
-        if(childNode):
-            opens.extend(childNode)
+        childNodes = tree.get(node)
+        if(childNodes):
+            opens.extend(childNodes)
     print('\nBFS')
     if(isDone):
         print(' => '.join(result))

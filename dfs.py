@@ -17,9 +17,9 @@ def DFS(tree, root, goal):
             isDone = True
             break
         opens.pop(0)
-        childNode = tree.get(node)
-        if(childNode):
-            opens[:0] = childNode
+        childNodes = tree.get(node)
+        if(childNodes):
+            opens[:0] = childNodes
     print('\nDFS')
     rs = ' => '.join(result)
     if(isDone):
