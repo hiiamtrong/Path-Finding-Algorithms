@@ -1,7 +1,6 @@
 
 def IDS(tree, root, goal, maxDepth):
     # init some variable to save some useful infomation
-    result = list()
     visted = dict()
     closed = dict()
     opens = list(root)
