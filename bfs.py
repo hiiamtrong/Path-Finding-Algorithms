@@ -1,7 +1,10 @@
 
 def BFS(tree, root, goal):
+    # init list of nodes was visted
     visted = dict()
+    # init list of nodes will be passed througt, start with head node
     opens = [root]
+    # init list of nodes was has been passed
     closed = list()
     isDone = False
     while not isDone:

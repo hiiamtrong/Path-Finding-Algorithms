@@ -1,10 +1,12 @@
-def HC(Graph, start, goal):
+def HC(Graph, head, goal):
     graph = Graph['graph']
     h = Graph['h']
+    # init list of nodes was visted
     visted = dict()
+    # init list of nodes was has been passed
     closed = []
-
-    opens = list(start)
+    # init list of nodes will be passed througt, start with head node
+    opens = list(head)
     isDone = False
     while not isDone:
         childNodes_with_h = {}
@@ -27,6 +29,7 @@ def HC(Graph, start, goal):
                 childNodes_with_h[childNode] = h.get(childNode)
             sorted_dict = dict(
                 sorted(childNodes_with_h.items(), key=lambda k: k[1]))
+            # push childNodes to head of opens
             opens[:0] = sorted_dict.keys()
     print('\nHC')
     if(isDone):

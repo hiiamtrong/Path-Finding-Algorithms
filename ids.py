@@ -1,11 +1,14 @@
 
 def IDS(tree, root, goal, maxDepth):
-    # init some variable to save some useful infomation
+    # init list of nodes was visted
     visted = dict()
+    # init list of node with it's level
     children = dict()
+    # init list of nodes will be passed througt, start with head node
     opens = list(root)
+    # init list of nodes was has been passed
     closed = list()
-    children[root] = {"visted": True, "level": 0, "node": root}
+    children[root] = {"level": 0, "node": root}
     isDone = False
     while not isDone:
         if len(opens) <= 0:
@@ -30,7 +33,7 @@ def IDS(tree, root, goal, maxDepth):
             opens.extend(childNodes)
         for childNode in childNodes:
             children[childNode] = {
-                "visted": True, "level": currentDepth+1, "node": childNode
+               "level": currentDepth+1, "node": childNode
             }
 
     print('\nIDS')

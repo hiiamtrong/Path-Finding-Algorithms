@@ -1,5 +1,6 @@
 
 def DFS(tree, root, goal):
+    # init list of nodes was visted
     visted = dict()
     opens = [root]
     closed = list()
