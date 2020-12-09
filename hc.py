@@ -1,4 +1,4 @@
-def HC(Graph, head, goal):
+def HC(Graph, head, goals):
     graph = Graph['graph']
     h = Graph['h']
     # init list of nodes was visted
@@ -12,6 +12,7 @@ def HC(Graph, head, goal):
         childNodes_with_h = {}
         if len(opens) <= 0:
             break
+        # current node
         node = opens[0]
         closed.append(f'{node}({h[node]})')
 
@@ -19,7 +20,7 @@ def HC(Graph, head, goal):
             break
         else:
             visted[node] = True
-        if(node == goal):
+        if(node in goals):
             isDone = True
             break
         opens.pop(0)
@@ -35,4 +36,4 @@ def HC(Graph, head, goal):
     if(isDone):
         print(" => ".join(closed))
     else:
-        print(f'Not found {goal} in this tree')
+        print(f'Not found [{", ".join(goals)}] in this tree')

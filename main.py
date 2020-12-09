@@ -13,7 +13,7 @@ hill_climb = dataJson['hill-climb']
 
 
 if __name__ == '__main__':
-    DFS(tree, 'S', 'F')
-    BFS(tree, 'S', 'F')
-    IDS(tree, 'S', 'F', 2)
-    HC(hill_climb, 'A', 'B')
+    DFS(tree, 'A', ['W','Z'])
+    BFS(tree, 'A', ['G','R'])
+    IDS(tree, 'A', ['G','R'], 2)
+    HC(hill_climb, 'A', ['B'])

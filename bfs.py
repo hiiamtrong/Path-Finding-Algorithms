@@ -1,5 +1,5 @@
 
-def BFS(tree, root, goal):
+def BFS(tree, root, goals):
     # init list of nodes was visted
     visted = dict()
     # init list of nodes will be passed througt, start with head node
@@ -10,13 +10,14 @@ def BFS(tree, root, goal):
     while not isDone:
         if len(opens) <= 0:
             break
+        # current node
         node = opens[0]
         closed.append(node)
         if visted.get(node, False) == True:
             break
         else:
             visted[node] = True
-        if(node == goal):
+        if(node in goals):
             isDone = True
             break
         opens.pop(0)
@@ -27,4 +28,4 @@ def BFS(tree, root, goal):
     if(isDone):
         print(' => '.join(closed))
     else:
-        print(f'Not found {goal} in this tree')
+        print(f'Not found [{", ".join(goals)}] in this tree')
