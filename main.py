@@ -9,11 +9,17 @@ filePath = open('./data.json')
 data = filePath.read()
 dataJson = loads(data)
 tree = dataJson['tree']
-hill_climb = dataJson['hill-climb']
+# list of goals of DFS, DFS, IDS algorithms
+goals = dataJson['goals']
 
+hill_climb = dataJson['hill-climb']
+# list of goals of HC algorithm
+goals_HC = dataJson['hill-climb']['goals']
+# root node
+root = dataJson['root']
 
 if __name__ == '__main__':
-    DFS(tree, 'A', ['W','Z'])
-    BFS(tree, 'A', ['G','R'])
-    IDS(tree, 'A', ['G','R'], 2)
-    HC(hill_climb, 'A', ['B'])
+    DFS(tree, root, goals)
+    BFS(tree, root, goals)
+    IDS(tree, root, goals, 2)
+    HC(hill_climb, root, goals_HC)

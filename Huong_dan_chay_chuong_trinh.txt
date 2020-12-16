@@ -1,11 +1,14 @@
 ﻿# Hướng dẫn chạy chương trình:
 1. Nhập cây vào file data.json với dạng 
 {
+    "root":Điểm đầu,
+    "goals":[danh sách đích đến],
     "tree": {
         node cha:[Danh sách node con],
         ...
     },
     "hill-climb": {
+        "goals":[danh sách đích đến],
         "graph": {
             node cha:[Danh sách node con],
         },
@@ -16,6 +19,11 @@
 }
 Vd:
 {
+    "root": "A",
+    "goals": [
+        "G",
+        "R"
+    ],
     "tree": {
         "A": [
             "B",
@@ -41,20 +49,23 @@ Vd:
             "U",
             "V"
         ],
-        "O":[
+        "O": [
             "I",
             "J"
         ],
-        "Y":[
+        "Y": [
             "R",
             "S"
         ],
-        "V":[
+        "V": [
             "G",
             "H"
         ]
     },
     "hill-climb": {
+        "goals": [
+            "B"
+        ],
         "graph": {
             "A": [
                 "C",
@@ -103,4 +114,4 @@ Vd:
 }
 
 2. Mở cmd ở thư mục hiện tại
-3. Gõ python3 main.py
+3. Nhập python3 main.py
